@@ -16,13 +16,13 @@ const TodoForm = () => {
 
     setTodos([...todos, todo])
     setTask('')
-  };
+  }
 
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
-      handleAddTodo();
+      handleAddTodo()
     }
-  };
+  }
 
   return (
     <div className="todo-form">

@@ -18,4 +18,4 @@ Créer une branche `test`, c'est sur cette branche que vous allez coder. Une foi
 
 
 3. #### Indices:
-- pour le toggle: méthode `findIndex` sur un tableau
+- pour le toggle et le delete: méthode `findIndex` sur un tableau

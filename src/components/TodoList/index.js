@@ -17,7 +17,7 @@ const TodoList = () => {
   const toggleCheck = (id) => {
     const clonedTodos = [...todos]
     const index = clonedTodos.findIndex(todo => todo.id === id )
-    clonedTodos[index].checked = true
+    clonedTodos[index].checked = !clonedTodos[index].checked
     setTodos(clonedTodos)
   }
 
