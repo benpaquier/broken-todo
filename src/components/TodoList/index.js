@@ -12,7 +12,10 @@ const TodoList = () => {
   };
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+    const clonedTodos = [...todos]
+    const index = clonedTodos.findIndex(todo => todo.id === id )
+    clonedTodos[index].checked = true
+    setTodos(clonedTodos)
   };
 
   const handleKeyUp = (e, id) => {
