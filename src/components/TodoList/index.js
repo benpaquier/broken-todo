@@ -8,15 +8,18 @@ const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
 
   const handleDelete = (id) => {
-    // Fix an ability to delete task
-  };
+    const clonedTodos = [...todos]
+    const index = clonedTodos.findIndex(todo => todo.id === id )
+    clonedTodos.splice(index, 1)
+    setTodos(clonedTodos)
+  }
 
   const toggleCheck = (id) => {
     const clonedTodos = [...todos]
     const index = clonedTodos.findIndex(todo => todo.id === id )
     clonedTodos[index].checked = true
     setTodos(clonedTodos)
-  };
+  }
 
   const handleKeyUp = (e, id) => {
     if (e.keyCode === 13) {
