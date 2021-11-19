@@ -8,13 +8,16 @@ const TodoForm = () => {
   const [task, setTask] = useState('')
 
   const handleAddTodo = () => {
-    // Fin an ability to add new task
+    // Fix an ability to add new task
+    const newTodos = [...todos, task];
+    setTodos(newTodos);
   }
 
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
       handleAddTodo()
     }
+    setTask("");
   }
 
   return (
