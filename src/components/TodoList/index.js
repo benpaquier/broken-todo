@@ -6,7 +6,7 @@ import Checkbox from '../Checkbox'
 
 const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
-
+  
   const handleDelete = (id) => {
     // Fix an ability to delete task
   }
