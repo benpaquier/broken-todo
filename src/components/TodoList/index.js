@@ -1,6 +1,7 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 
-import './todo-list.css'
+import  './todo-list.css'
+import todo from '../../todo.json'
 import { TodoContext } from '../../contexts/Todo'
 import Checkbox from '../Checkbox'
 

@@ -6,6 +6,7 @@ import TodoList from './components/TodoList'
 import TodoResults from './components/TodoResults'
 
 const App = () => {
+
   return (
     <TodoContextProvider>
       <div className="root">
