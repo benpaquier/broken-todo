@@ -8,13 +8,13 @@ const TodoContextProvider = props => {
   const [todos, setTodos] = useState([])
 
   const value = {
-    todos,
+    todos : todosTemplate ,
     setTodos
   }
 
   return (
     <TodoContext.Provider value={value}>
-      {props.children}
+      {props.children} , 
     </TodoContext.Provider>
   )
 }

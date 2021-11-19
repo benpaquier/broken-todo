@@ -8,11 +8,9 @@ import TodoResults from './components/TodoResults'
 const App = () => {
   return (
     <TodoContextProvider>
-      <div className="root">
         <TodoList />
         <TodoResults />
         <TodoForm />
-      </div>
     </TodoContextProvider>
   )
 }
