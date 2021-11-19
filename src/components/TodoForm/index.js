@@ -5,11 +5,20 @@ import { TodoContext } from '../../contexts/Todo'
 
 const TodoForm = () => {
   const { todos, setTodos } = useContext(TodoContext)
-  const [task, setTask] = useState('')
+  const [task, setTask] = useState([])
 
-  const handleAddTodo = () => {
-    // Fin an ability to add new task
+  const handleAddTodo = (e) => {
+    console.log("event de handleAddTodo: ",e)
+    e.preventDefault()
+    task = e.target.value
+    setTask(task)
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //   this.props.addTask(this.state.task)
+  //   this.setState({ task: "" })
+  // }
 
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
@@ -19,15 +28,17 @@ const TodoForm = () => {
 
   return (
     <div className="todo-form">
-      <input
-        placeholder="Enter new task"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        onKeyUp={handleKeyUp}
-      />
-      <button type="button" onClick={handleAddTodo}>
-        Add task
-      </button>
+      <form onSubmit={setTask([handleAddTodo,...task])}>
+        <input
+          placeholder="Enter new task"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
+          onKeyUp={handleKeyUp}
+        />
+      </form>
+        <button type="button" onClick={handleAddTodo}>
+          Add task
+        </button>
     </div>
   )
 }

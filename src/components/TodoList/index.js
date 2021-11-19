@@ -8,7 +8,7 @@ const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
 
   const handleDelete = (id) => {
-    // Fix an ability to delete task
+    // task.splice(onClick, 1)
   }
 
   const toggleCheck = (id) => {
