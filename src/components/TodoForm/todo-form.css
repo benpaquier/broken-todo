@@ -1,6 +1,7 @@
 .todo-form {
   display: flex;
   justify-content: center;
+  
 }
 
 .todo-form input {
