@@ -7,8 +7,10 @@ const TodoForm = () => {
   const { todos, setTodos } = useContext(TodoContext)
   const [task, setTask] = useState('')
 
-  const handleAddTodo = () => {
-    // Fin an ability to add new task
+  const handleAddTodo = (e) => {
+    let newTodo = [...todos, e] 
+    setTask(newTodo)
+    console.log(newTodo)
   }
 
   const handleKeyUp = (e) => {
