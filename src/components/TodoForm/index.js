@@ -3,12 +3,13 @@ import { useContext, useState } from 'react'
 import './todo-form.css'
 import { TodoContext } from '../../contexts/Todo'
 
+
 const TodoForm = () => {
   const { todos, setTodos } = useContext(TodoContext)
   const [task, setTask] = useState('')
-
+// function ajout de tache dans le state  task
   const handleAddTodo = () => {
-    // Fin an ability to add new task
+    // setTask(todo.json)
   }
 
   const handleKeyUp = (e) => {
