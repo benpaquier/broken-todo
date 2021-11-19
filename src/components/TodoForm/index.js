@@ -9,11 +9,15 @@ const TodoForm = () => {
 
   const handleAddTodo = () => {
     // Fin an ability to add new task
-    setTodos([...todos, {id:"", label:task, checked:false}])
+    const newTask = {
+      id: todos[todos.lenght - 1].id + 1,
+      label: task, 
+      checked: false
+    }
+    setTodos([...todos, newTask])
     setTask('')
   }
-  console.log(todos)
-  
+
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
       handleAddTodo()
