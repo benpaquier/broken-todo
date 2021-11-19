@@ -27,15 +27,17 @@ const TodoList = () => {
       {todos.length ? (
         <div className="todo-list-content">
           {todos.map((todoItem) => (
-            <Checkbox
-              key={todoItem.id}
-              label={todoItem.label}
-              checked={todoItem.checked}
-              onClick={() => toggleCheck(todoItem.id)}
-              onKeyUp={(e) => handleKeyUp(e, todoItem.id)}
-              onDelete={() => handleDelete(todoItem.id)}
-            />
-          ))}
+            <div>
+              <Checkbox
+                key={todoItem.id}
+                label={todoItem.label}
+                checked={todoItem.checked}
+                onClick={() => toggleCheck(todoItem.id)}
+                onKeyUp={(e) => handleKeyUp(e, todoItem.id)}
+                onDelete={() => handleDelete(todoItem.id)}
+              /> 
+            </div>
+         ))} 
         </div>
       ) : (
         <div className="no-todos">Looks like you&apos;re absolutely free today!</div>
