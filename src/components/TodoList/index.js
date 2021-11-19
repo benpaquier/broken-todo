@@ -38,7 +38,7 @@ const TodoList = () => {
           ))}
         </div>
       ) : (
-        <div className="no-todos">Looks like you&apos;re absolutely free today!</div>
+        <div className="no-todos">Looks like you're absolutely free today!</div>
       )}
     </div>
   )
