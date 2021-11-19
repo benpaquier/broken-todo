@@ -30,8 +30,8 @@ const TodoList = () => {
       toggleCheck(id)
     }
   }
+  // console.log(e.keyCode);
 
-  console.log(todos);
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
