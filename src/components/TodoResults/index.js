@@ -1,8 +1,20 @@
 import './todo-results.css'
+import { useContext } from 'react'
+
+import { TodoContext } from '../../contexts/Todo'
 
 const TodoResults = () => {
+  const { todos, setTodos } = useContext(TodoContext)
+
   const calculateChecked = () => {
-    // Fix an ability to calculate completed tasks
+    let count = 0
+
+    todos.forEach(element => {
+      if (element.checked === true) {
+        count += 1
+      }
+    })
+    console.log(count);
   }
 
   return (
