@@ -15,8 +15,14 @@ const TodoList = () => {
   }
 
   const toggleCheck = (id) => {
-    let label = todos[id].label
-    setTodos({ id : id, label : label, checked : true})
+    setTodos(
+    todos.map(
+      e => {
+       if (e.id === id) {
+        {e.checked ? e.checked = false : e.checked = true}
+       }
+       return e
+     }))
   }
 
   const handleKeyUp = (e, id) => {
@@ -24,6 +30,8 @@ const TodoList = () => {
       toggleCheck(id)
     }
   }
+
+  // console.log(todos);
 
   return (
     <div className="todo-list">
