@@ -6,7 +6,7 @@ const TodoContext = createContext({})
 
 const TodoContextProvider = props => {
   const [todos, setTodos] = useState(
-    todosTemplate)
+    todosTemplate)  
 
   const value = {
     todos: todos,
