@@ -2,10 +2,13 @@ import { useContext } from 'react'
 
 import './todo-list.css'
 import { TodoContext } from '../../contexts/Todo'
-import Checkbox from '../Checkbox'
+import Checkbox from '../Checkbox/CheckBox'
 
 const TodoList = () => {
+
   const { todos, setTodos } = useContext(TodoContext)
+
+  // setTodos([basicTasks,...todos])
 
   const handleDelete = (id) => {
     // Fix an ability to delete task

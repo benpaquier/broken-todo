@@ -8,8 +8,8 @@ const TodoContextProvider = props => {
   const [todos, setTodos] = useState([])
 
   const value = {
-    todos,
-    setTodos
+    todos : todosTemplate,
+    setTodos : setTodos
   }
 
   return (

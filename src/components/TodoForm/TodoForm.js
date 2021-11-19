@@ -10,7 +10,7 @@ const TodoForm = () => {
   const [task, setTask] = useState('')
 
   const handleAddTodo = () => {
-    setTodos([...todos,{label : task}])
+    setTodos([...todos,{label : task, checked : false}])
     setTask('')
   }
 
@@ -19,8 +19,6 @@ const TodoForm = () => {
       handleAddTodo()
     }
   }
-
-  console.log(todos);
   
   return (
     <div className="todo-form">
