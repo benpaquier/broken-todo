@@ -17,6 +17,8 @@ const TodoForm = () => {
     }
   }
 
+  console.log(todos)
+
   return (
     <div className="todo-form">
       <input
