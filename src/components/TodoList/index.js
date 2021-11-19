@@ -14,11 +14,11 @@ const TodoList = () => {
   const toggleCheck = (id) => {
     const search = todos.findIndex (element => element.id === id )
     const newArray = [...todos]
-    // if (newArray[search].checked === false) {
-    //   newArray[search].checked = false
-    // } else {
+    if (todos[search].checked === false) {
       newArray[search].checked = true
-    // }
+    } else {
+      newArray[search].checked = false
+    }
     setTodos(newArray)
   }
 
@@ -27,7 +27,7 @@ const TodoList = () => {
       toggleCheck(id)
     }
   }
-  console.log(todos);
+
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
