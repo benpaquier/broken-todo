@@ -9,6 +9,7 @@ const App = () => {
   return (
     <TodoContextProvider>
       <div className="root">
+        <p>Yo</p>
         <TodoList />
         <TodoResults />
         <TodoForm />
