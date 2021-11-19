@@ -8,7 +8,10 @@ const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
 
   const handleDelete = (id) => {
-    // Fix an ability to delete task
+    const search = todos.findIndex (element => element.id === id )
+    const newArray = [...todos]
+    newArray.splice(search, 1)
+    setTodos(newArray)
   }
 
   const toggleCheck = (id) => {
@@ -28,6 +31,7 @@ const TodoList = () => {
     }
   }
 
+  console.log(todos);
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
