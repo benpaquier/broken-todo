@@ -15,7 +15,8 @@ const TodoList = () => {
   }
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+    let label = todos[id].label
+    setTodos({ id : id, label : label, checked : true})
   }
 
   const handleKeyUp = (e, id) => {
@@ -31,7 +32,7 @@ const TodoList = () => {
         <div className="todo-list-content">
           {todos.map((todoItem) => (
             <Checkbox
-              key={todoItem.id}
+              key={todoItem.id + todoItem.label}
               label={todoItem.label}
               checked={todoItem.checked}
               onClick={() => toggleCheck(todoItem.id)}
