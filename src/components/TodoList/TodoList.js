@@ -11,7 +11,8 @@ const TodoList = () => {
   // setTodos([basicTasks,...todos])
 
   const handleDelete = (id) => {
-    // Fix an ability to delete task
+    const clonedTasks = todos.filter((e, i) => i !== id)
+    setTodos(clonedTasks)
   }
 
   const toggleCheck = (id) => {
