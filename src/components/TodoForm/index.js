@@ -9,14 +9,16 @@ const TodoForm = () => {
 
   const handleAddTodo = () => {
     // Fin an ability to add new task
+    setTodos([...todos, {id:"", label:task, checked:false}])
+    setTask('')
   }
-
+  console.log(todos)
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
       handleAddTodo()
     }
   }
-
+  
   return (
     <div className="todo-form">
       <input
