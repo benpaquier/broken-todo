@@ -1,8 +1,14 @@
+import { useContext } from 'react'
+
 import './todo-results.css'
+import { TodoContext } from '../../contexts/Todo'
 
 const TodoResults = () => {
+  const { todos } = useContext(TodoContext)
+
   const calculateChecked = () => {
-    // Fix an ability to calculate completed tasks
+    const checkedTodos = todos.filter(todo => todo.checked)
+    return checkedTodos.length
   }
 
   return (

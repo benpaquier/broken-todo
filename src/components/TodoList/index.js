@@ -6,13 +6,18 @@ import Checkbox from '../Checkbox'
 
 const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
+  const clonedTodos = [...todos]
 
-  const handleDelete = (id) => {
-    // Fix an ability to delete task
+  const handleDelete = id => {
+    const index = clonedTodos.findIndex(task => task.id === id)
+    clonedTodos.splice(index, 1)
+    setTodos(clonedTodos)
   }
 
-  const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+  const toggleCheck = id => {
+    const index = clonedTodos.findIndex(task => task.id === id)
+    clonedTodos[index].checked = !clonedTodos[index].checked
+    setTodos(clonedTodos)
   }
 
   const handleKeyUp = (e, id) => {
