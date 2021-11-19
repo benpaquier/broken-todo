@@ -8,7 +8,8 @@ const TodoForm = () => {
   const [task, setTask] = useState('')
 
   const handleAddTodo = () => {
-    // Fin an ability to add new task
+    setTodos([...todos, {checked: false, id: "", label: task}])
+    setTask('')
   }
 
   const handleKeyUp = (e) => {
@@ -17,7 +18,8 @@ const TodoForm = () => {
     }
   }
 
-  console.log(todos)
+  console.log("todos", todos)
+  console.log("task", task)
 
   return (
     <div className="todo-form">
