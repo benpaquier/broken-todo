@@ -2,17 +2,28 @@ import { useContext } from 'react'
 
 import './todo-list.css'
 import { TodoContext } from '../../contexts/Todo'
-import Checkbox from '../Checkbox'
+import Checkbox from '../Checkbox/CheckBox'
 
 const TodoList = () => {
+
   const { todos, setTodos } = useContext(TodoContext)
 
+  // setTodos([basicTasks,...todos])
+
   const handleDelete = (id) => {
-    // Fix an ability to delete task
+    const clonedTasks = todos.filter((e, i) => i !== id)
+    setTodos(clonedTasks)
   }
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+    setTodos(
+    todos.map(
+      e => {
+       if (e.id === id) {
+        {e.checked ? e.checked = false : e.checked = true}
+       }
+       return e
+     }))
   }
 
   const handleKeyUp = (e, id) => {
@@ -21,6 +32,8 @@ const TodoList = () => {
     }
   }
 
+  // console.log(todos);
+
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
@@ -28,7 +41,7 @@ const TodoList = () => {
         <div className="todo-list-content">
           {todos.map((todoItem) => (
             <Checkbox
-              key={todoItem.id}
+              key={todoItem.id + todoItem.label}
               label={todoItem.label}
               checked={todoItem.checked}
               onClick={() => toggleCheck(todoItem.id)}
@@ -38,7 +51,7 @@ const TodoList = () => {
           ))}
         </div>
       ) : (
-        <div className="no-todos">Looks like you&apos;re absolutely free today!</div>
+        <div className="no-todos">Looks like you're absolutely free today!</div>
       )}
     </div>
   )
