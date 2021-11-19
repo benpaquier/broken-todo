@@ -12,7 +12,10 @@ const TodoList = () => {
   }
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+     
+      
+    
+    
   }
 
   const handleKeyUp = (e, id) => {

@@ -1,11 +1,13 @@
 import './checkbox.css'
 
 const Checkbox = ({ onClick, checked, onDelete, label, onKeyUp }) => (
+
+ 
    <div className="checkbox">
      <div
        tabIndex="0"
        role="checkbox"
-       aria-checked
+       aria-checked 
        className="checkbox-content"
        onClick={onClick}
        onKeyUp={onKeyUp}

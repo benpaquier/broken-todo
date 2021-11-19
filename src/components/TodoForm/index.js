@@ -12,7 +12,10 @@ const TodoForm = () => {
     if(task.length !==0){
     setTodos([...todos,
   {
-    "label": task   
+    "label": task   ,
+    "checked" : true
+    
+
   }])
     }
     setTask("")
