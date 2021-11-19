@@ -4,11 +4,8 @@ import './todo-list.css'
 import { TodoContext } from '../../contexts/Todo'
 import Checkbox from '../Checkbox'
 
-import todosTemplate from '../../todo.json'
-
 const TodoList = () => {
   const { todos, setTodos } = useContext(TodoContext)
-  setTodos (todosTemplate)
 
   const handleDelete = (id) => {
     // Fix an ability to delete task

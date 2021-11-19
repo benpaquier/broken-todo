@@ -13,6 +13,7 @@ const TodoForm = () => {
     setTask('')
   }
   console.log(todos)
+  
   const handleKeyUp = (e) => {
     if (e.keyCode === 13) {
       handleAddTodo()

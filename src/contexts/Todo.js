@@ -1,11 +1,11 @@
 import { createContext, useState } from 'react'
 
-// import todosTemplate from '../todo.json'
+import todosTemplate from '../todo.json'
 
 const TodoContext = createContext({})
 
 const TodoContextProvider = props => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(todosTemplate)
 
   const value = {
     todos,
