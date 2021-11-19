@@ -12,7 +12,14 @@ const TodoList = () => {
   }
 
   const toggleCheck = (id) => {
-    // Fix an ability to toggle task
+    const search = todos.findIndex (element => element.id === id )
+    const newArray = [...todos]
+    // if (newArray[search].checked === false) {
+    //   newArray[search].checked = false
+    // } else {
+      newArray[search].checked = true
+    // }
+    setTodos(newArray)
   }
 
   const handleKeyUp = (e, id) => {
@@ -20,7 +27,7 @@ const TodoList = () => {
       toggleCheck(id)
     }
   }
-
+  console.log(todos);
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
