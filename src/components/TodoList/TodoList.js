@@ -8,11 +8,11 @@ const TodoList = () => {
 
   const { todos, setTodos } = useContext(TodoContext)
 
-  // setTodos([basicTasks,...todos])
-
   const handleDelete = (id) => {
-    const clonedTasks = todos.filter((e, i) => i !== id)
-    setTodos(clonedTasks)
+
+    const newTodos = todos.filter((e, i) => i !== id)
+
+    setTodos(newTodos)
   }
 
   const toggleCheck = (id) => {
@@ -23,7 +23,8 @@ const TodoList = () => {
         {e.checked ? e.checked = false : e.checked = true}
        }
        return e
-     }))
+     })
+    )
   }
 
   const handleKeyUp = (e, id) => {
@@ -32,21 +33,21 @@ const TodoList = () => {
     }
   }
 
-  // console.log(todos);
+  console.log(todos);
 
   return (
     <div className="todo-list">
       <span className="todo-list-title">Things to do:</span>
       {todos.length ? (
         <div className="todo-list-content">
-          {todos.map((todoItem) => (
+          {todos.map((todoItem,i) => (
             <Checkbox
               key={todoItem.id + todoItem.label}
               label={todoItem.label}
               checked={todoItem.checked}
-              onClick={() => toggleCheck(todoItem.id)}
-              onKeyUp={(e) => handleKeyUp(e, todoItem.id)}
-              onDelete={() => handleDelete(todoItem.id)}
+              onClick={() => toggleCheck(i)}
+              onKeyUp={(e) => handleKeyUp(e, i)}
+              onDelete={() => handleDelete(i)}
             />
           ))}
         </div>

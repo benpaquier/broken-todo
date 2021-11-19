@@ -9,7 +9,7 @@ const TodoContextProvider = props => {
 
   const value = {
     todos : todos,
-    setTodos : setTodos
+    setTodos
   }
 
   return (
