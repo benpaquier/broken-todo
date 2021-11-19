@@ -7,8 +7,8 @@ const TodoForm = () => {
   const { todos, setTodos } = useContext(TodoContext)
   const [task, setTask] = useState('')
 
-  const handleAddTodo = () => {
-    // Fin an ability to add new task
+  const handleAddTodo = (e) => {
+    setTask(e.target.value)
   }
 
   const handleKeyUp = (e) => {
@@ -22,7 +22,7 @@ const TodoForm = () => {
       <input
         placeholder="Enter new task"
         value={task}
-        onChange={(e) => setTask(e.target.value)}
+        // onChange={(e) => setTask(e.target.value)}
         onKeyUp={handleKeyUp}
       />
       <button type="button" onClick={handleAddTodo}>
