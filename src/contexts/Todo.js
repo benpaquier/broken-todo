@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-import todosTemplate from '../todo.json'
+// import todosTemplate from '../todo.json'
 
 const TodoContext = createContext({})
 
